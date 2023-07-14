@@ -1,0 +1,27 @@
+﻿<Window x:Class="ContactWPF.ContactEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContactWPF"
+        mc:Ignorable="d"
+        Title="ContactEdit" Height="450" Width="800">
+    <Grid Margin="10" Background="#FF4A5BA2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="First Name:"/>
+        <TextBox Grid.Row="1" Text="{Binding ElementName=FNBOX,Path=Text,Mode=TwoWay}" x:Name="FNBOX" Margin="0,1,10,115"/>
+        <Label Grid.Row="1" Content="Last Name:" Margin="0,21,0,81"/>
+        <TextBox Grid.Row="1" Text="{Binding ElementName=LNBOX,Path=Text,Mode=TwoWay}" x:Name="LNBOX" Margin="0,54,10,61"/>
+
+
+        <Label Grid.Row="1" Content="Phone Number:" Margin="0,82,0,-34"/>
+        <TextBox Grid.Row="1" Text="{Binding ElementName=PNBOX,Path=Text,Mode=TwoWay}" x:Name="PNBOX" Margin="0,107,10,10"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,135,10,-68" Width="150">
+            <Button x:Name="SaveButton" Content="Save"  Margin="5" Width="73" Height="41" Click="SaveButton_Click" Background="Lime"/>
+            <Button x:Name="CancelButton" Content="Cancel" Height="41" Width="65" Click="CancelButton_Click" Background="Red"/>
+        </StackPanel>
+    </Grid>
+</Window>

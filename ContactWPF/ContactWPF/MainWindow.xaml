@@ -1,0 +1,29 @@
+﻿<Window x:Class="ContactWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContactWPF"
+        mc:Ignorable="d"
+        Title="ContactBook" Height="450" Width="800">
+    <Grid Margin="0,0,0,-6" Background="#FF4A5BA2">
+        <ListBox x:Name="ContactListBox" 
+                  ItemsSource="{Binding Contact}"
+                  SelectedItem="{Binding SelectedContact}" 
+                  
+                  Margin="30,30,30,174">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel >
+                        <TextBlock Text="{Binding FirstName}"></TextBlock>
+                        <TextBlock Text="{Binding SecondName}"></TextBlock>
+                        <TextBlock Text="{Binding PhoneNumber}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="AddContact" Content="Add" Margin="0,283,585,76" Click="AddContact_Click" Background="Lime"  ></Button>
+        <Button x:Name="EditContact" Content="Edit" Margin="292,283,292,76" Click="EditContact_Click" Background="Yellow"></Button>
+        <Button x:Name="DeleteContact" Content="Delete" Margin="585,283,0,76" Click="DeleteContact_Click" Background="Red"></Button>
+    </Grid>
+</Window>
